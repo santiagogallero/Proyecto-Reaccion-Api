@@ -1,0 +1,4 @@
+- Proyecto Android nativo en Java (sin internet)
+- Persistencia local con SharedPreferences
+- Mantener código simple y legible para contexto académico
+- Evitar dependencias innecesarias

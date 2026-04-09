@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "C:\\Users\\Santiago\\.gradle\\daemon\\9.0-milestone-1\\com.example.reaccionatencion.app-mergeDebugResources-31:\\layout\\activity_game.xml",
+        "source": "C:\\Users\\Santiago\\.gradle\\daemon\\9.0-milestone-1\\com.example.reaccionatencion.app-main-34:\\layout\\activity_game.xml"
+    },
+    {
+        "merged": "C:\\Users\\Santiago\\.gradle\\daemon\\9.0-milestone-1\\com.example.reaccionatencion.app-mergeDebugResources-31:\\layout\\activity_result.xml",
+        "source": "C:\\Users\\Santiago\\.gradle\\daemon\\9.0-milestone-1\\com.example.reaccionatencion.app-main-34:\\layout\\activity_result.xml"
+    },
+    {
+        "merged": "com.example.reaccionatencion.app-mergeDebugResources-31:/layout/activity_game.xml",
+        "source": "com.example.reaccionatencion.app-main-34:/layout/activity_game.xml"
+    },
+    {
+        "merged": "C:\\Users\\Santiago\\.gradle\\daemon\\9.0-milestone-1\\com.example.reaccionatencion.app-mergeDebugResources-31:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\Santiago\\.gradle\\daemon\\9.0-milestone-1\\com.example.reaccionatencion.app-main-34:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "com.example.reaccionatencion.app-mergeDebugResources-31:/layout/activity_main.xml",
+        "source": "com.example.reaccionatencion.app-main-34:/layout/activity_main.xml"
+    }
+]
