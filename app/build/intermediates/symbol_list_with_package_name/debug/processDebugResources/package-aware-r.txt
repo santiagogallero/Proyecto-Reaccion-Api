@@ -3100,6 +3100,10 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable test_level_drawable
+drawable token_blue
+drawable token_green
+drawable token_red
+drawable token_yellow
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
@@ -3292,6 +3296,7 @@ id enterAlwaysCollapsed
 id escape
 id etCustomTime
 id etIterations
+id etMaxErrors
 id etPlayerName
 id exitUntilCollapsed
 id expand_activities_button
@@ -3318,6 +3323,7 @@ id ghost_view_holder
 id gone
 id graph
 id graph_wrap
+id gridColorMosaic
 id gridPads
 id group_divider
 id grouping
@@ -3523,6 +3529,7 @@ id south
 id spacer
 id special_effects_controller_view_tag
 id spinnerDifficulty
+id spinnerEventProfile
 id spline
 id split_action_bar
 id spread
@@ -3579,6 +3586,7 @@ id textinput_prefix_text
 id textinput_suffix_text
 id tilCustomTime
 id tilIterations
+id tilMaxErrors
 id tilPlayer
 id time
 id title
@@ -3603,12 +3611,15 @@ id tvBest
 id tvBestScore
 id tvCountdown
 id tvDifficulty
+id tvEventProfile
 id tvGameInfo
 id tvHint
 id tvMain
+id tvOffline
 id tvRule
 id tvScore
 id tvStats
+id tvStimulus
 id tvTimer
 id tvTitle
 id unchecked

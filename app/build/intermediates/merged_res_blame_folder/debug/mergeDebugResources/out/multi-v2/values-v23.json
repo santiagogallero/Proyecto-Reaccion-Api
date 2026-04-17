@@ -4,7 +4,7 @@
             "outputFile": "com.example.reaccionatencion.app-mergeDebugResources-30:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Santiago\\.gradle\\caches\\9.0-milestone-1\\transforms\\11ebe0842055bf9f411d11ed24cc51e9\\transformed\\appcompat-1.7.0\\res\\values-v23\\values-v23.xml",
+                    "source": "/Users/santiago/.gradle/caches/9.0-milestone-1/transforms/11ebe0842055bf9f411d11ed24cc51e9/transformed/appcompat-1.7.0/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -15,7 +15,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Santiago\\.gradle\\caches\\9.0-milestone-1\\transforms\\ecf85a17193de4684e70ccbc25684876\\transformed\\material-1.12.0\\res\\values-v23\\values-v23.xml",
+                    "source": "/Users/santiago/.gradle/caches/9.0-milestone-1/transforms/ecf85a17193de4684e70ccbc25684876/transformed/material-1.12.0/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,5,9,13,16,19,22,25,28,32",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -34,7 +34,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Santiago\\.gradle\\caches\\9.0-milestone-1\\transforms\\a60f99ee4e9e1702d5bda9ef0a2ea8bd\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
+                    "source": "/Users/santiago/.gradle/caches/9.0-milestone-1/transforms/a60f99ee4e9e1702d5bda9ef0a2ea8bd/transformed/cardview-1.0.0/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

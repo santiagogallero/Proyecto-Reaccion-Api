@@ -9,6 +9,8 @@ public class GameConfig {
     public final boolean inverseMode;
     public final boolean dynamicDifficulty;
     public final boolean soundEnabled;
+    public final String eventProfile;
+    public final int maxErrorsToLose;
 
     public GameConfig(
             String player,
@@ -17,7 +19,9 @@ public class GameConfig {
             int maxTimeSeconds,
             boolean inverseMode,
             boolean dynamicDifficulty,
-            boolean soundEnabled
+            boolean soundEnabled,
+            String eventProfile,
+            int maxErrorsToLose
     ) {
         this.player = player;
         this.difficulty = difficulty;
@@ -26,5 +30,7 @@ public class GameConfig {
         this.inverseMode = inverseMode;
         this.dynamicDifficulty = dynamicDifficulty;
         this.soundEnabled = soundEnabled;
+        this.eventProfile = eventProfile;
+        this.maxErrorsToLose = maxErrorsToLose;
     }
 }

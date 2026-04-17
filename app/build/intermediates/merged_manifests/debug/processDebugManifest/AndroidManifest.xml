@@ -21,7 +21,6 @@
         android:extractNativeLibs="false"
         android:label="Desafio Reaccion"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/Theme.ReaccionAtencion" >
         <activity
             android:name="com.example.reaccionatencion.ResultActivity"

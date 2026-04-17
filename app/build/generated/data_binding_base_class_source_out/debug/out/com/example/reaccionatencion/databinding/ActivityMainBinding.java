@@ -34,10 +34,16 @@ public final class ActivityMainBinding implements ViewBinding {
   public final TextInputEditText etIterations;
 
   @NonNull
+  public final TextInputEditText etMaxErrors;
+
+  @NonNull
   public final TextInputEditText etPlayerName;
 
   @NonNull
   public final Spinner spinnerDifficulty;
+
+  @NonNull
+  public final Spinner spinnerEventProfile;
 
   @NonNull
   public final SwitchMaterial swDynamicDifficulty;
@@ -55,6 +61,9 @@ public final class ActivityMainBinding implements ViewBinding {
   public final TextInputLayout tilIterations;
 
   @NonNull
+  public final TextInputLayout tilMaxErrors;
+
+  @NonNull
   public final TextInputLayout tilPlayer;
 
   @NonNull
@@ -64,29 +73,43 @@ public final class ActivityMainBinding implements ViewBinding {
   public final TextView tvDifficulty;
 
   @NonNull
+  public final TextView tvEventProfile;
+
+  @NonNull
+  public final TextView tvOffline;
+
+  @NonNull
   public final TextView tvTitle;
 
   private ActivityMainBinding(@NonNull ScrollView rootView, @NonNull MaterialButton btnStart,
       @NonNull TextInputEditText etCustomTime, @NonNull TextInputEditText etIterations,
-      @NonNull TextInputEditText etPlayerName, @NonNull Spinner spinnerDifficulty,
+      @NonNull TextInputEditText etMaxErrors, @NonNull TextInputEditText etPlayerName,
+      @NonNull Spinner spinnerDifficulty, @NonNull Spinner spinnerEventProfile,
       @NonNull SwitchMaterial swDynamicDifficulty, @NonNull SwitchMaterial swInverseMode,
       @NonNull SwitchMaterial swSound, @NonNull TextInputLayout tilCustomTime,
-      @NonNull TextInputLayout tilIterations, @NonNull TextInputLayout tilPlayer,
-      @NonNull TextView tvBestScore, @NonNull TextView tvDifficulty, @NonNull TextView tvTitle) {
+      @NonNull TextInputLayout tilIterations, @NonNull TextInputLayout tilMaxErrors,
+      @NonNull TextInputLayout tilPlayer, @NonNull TextView tvBestScore,
+      @NonNull TextView tvDifficulty, @NonNull TextView tvEventProfile, @NonNull TextView tvOffline,
+      @NonNull TextView tvTitle) {
     this.rootView = rootView;
     this.btnStart = btnStart;
     this.etCustomTime = etCustomTime;
     this.etIterations = etIterations;
+    this.etMaxErrors = etMaxErrors;
     this.etPlayerName = etPlayerName;
     this.spinnerDifficulty = spinnerDifficulty;
+    this.spinnerEventProfile = spinnerEventProfile;
     this.swDynamicDifficulty = swDynamicDifficulty;
     this.swInverseMode = swInverseMode;
     this.swSound = swSound;
     this.tilCustomTime = tilCustomTime;
     this.tilIterations = tilIterations;
+    this.tilMaxErrors = tilMaxErrors;
     this.tilPlayer = tilPlayer;
     this.tvBestScore = tvBestScore;
     this.tvDifficulty = tvDifficulty;
+    this.tvEventProfile = tvEventProfile;
+    this.tvOffline = tvOffline;
     this.tvTitle = tvTitle;
   }
 
@@ -135,6 +158,12 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.etMaxErrors;
+      TextInputEditText etMaxErrors = ViewBindings.findChildViewById(rootView, id);
+      if (etMaxErrors == null) {
+        break missingId;
+      }
+
       id = R.id.etPlayerName;
       TextInputEditText etPlayerName = ViewBindings.findChildViewById(rootView, id);
       if (etPlayerName == null) {
@@ -144,6 +173,12 @@ public final class ActivityMainBinding implements ViewBinding {
       id = R.id.spinnerDifficulty;
       Spinner spinnerDifficulty = ViewBindings.findChildViewById(rootView, id);
       if (spinnerDifficulty == null) {
+        break missingId;
+      }
+
+      id = R.id.spinnerEventProfile;
+      Spinner spinnerEventProfile = ViewBindings.findChildViewById(rootView, id);
+      if (spinnerEventProfile == null) {
         break missingId;
       }
 
@@ -177,6 +212,12 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tilMaxErrors;
+      TextInputLayout tilMaxErrors = ViewBindings.findChildViewById(rootView, id);
+      if (tilMaxErrors == null) {
+        break missingId;
+      }
+
       id = R.id.tilPlayer;
       TextInputLayout tilPlayer = ViewBindings.findChildViewById(rootView, id);
       if (tilPlayer == null) {
@@ -195,6 +236,18 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tvEventProfile;
+      TextView tvEventProfile = ViewBindings.findChildViewById(rootView, id);
+      if (tvEventProfile == null) {
+        break missingId;
+      }
+
+      id = R.id.tvOffline;
+      TextView tvOffline = ViewBindings.findChildViewById(rootView, id);
+      if (tvOffline == null) {
+        break missingId;
+      }
+
       id = R.id.tvTitle;
       TextView tvTitle = ViewBindings.findChildViewById(rootView, id);
       if (tvTitle == null) {
@@ -202,8 +255,9 @@ public final class ActivityMainBinding implements ViewBinding {
       }
 
       return new ActivityMainBinding((ScrollView) rootView, btnStart, etCustomTime, etIterations,
-          etPlayerName, spinnerDifficulty, swDynamicDifficulty, swInverseMode, swSound,
-          tilCustomTime, tilIterations, tilPlayer, tvBestScore, tvDifficulty, tvTitle);
+          etMaxErrors, etPlayerName, spinnerDifficulty, spinnerEventProfile, swDynamicDifficulty,
+          swInverseMode, swSound, tilCustomTime, tilIterations, tilMaxErrors, tilPlayer,
+          tvBestScore, tvDifficulty, tvEventProfile, tvOffline, tvTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

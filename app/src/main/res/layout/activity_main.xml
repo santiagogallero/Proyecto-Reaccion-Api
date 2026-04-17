@@ -24,6 +24,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/tvOffline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center"
+            android:text="Todo funciona local y sin conexion"
+            android:textColor="@color/text_secondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilPlayer"
             android:layout_width="0dp"
@@ -34,7 +46,7 @@
             app:hintTextColor="@color/text_secondary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvTitle">
+            app:layout_constraintTop_toBottomOf="@id/tvOffline">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPlayerName"
@@ -61,6 +73,25 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvDifficulty" />
 
+        <TextView
+            android:id="@+id/tvEventProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Tipo de evento"
+            android:textColor="@color/text_secondary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spinnerDifficulty" />
+
+        <Spinner
+            android:id="@+id/spinnerEventProfile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvEventProfile" />
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilIterations"
             android:layout_width="0dp"
@@ -71,7 +102,7 @@
             app:hintTextColor="@color/text_secondary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/spinnerDifficulty">
+            app:layout_constraintTop_toBottomOf="@id/spinnerEventProfile">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etIterations"
@@ -99,22 +130,41 @@
                 android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilMaxErrors"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Errores maximos permitidos"
+            app:boxBackgroundColor="@color/bg_panel"
+            app:hintTextColor="@color/text_secondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilCustomTime">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etMaxErrors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/swInverseMode"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="Modo secuencia inversa"
+            android:text="Mezclar minijuegos"
             android:textColor="@color/text_primary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tilCustomTime" />
+            app:layout_constraintTop_toBottomOf="@id/tilMaxErrors" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/swDynamicDifficulty"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Incremento dinamico de dificultad"
+            android:text="Ajuste dinamico de tiempo"
             android:textColor="@color/text_primary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

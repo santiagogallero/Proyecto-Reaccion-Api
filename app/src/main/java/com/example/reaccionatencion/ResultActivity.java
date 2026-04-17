@@ -22,6 +22,8 @@ public class ResultActivity extends AppCompatActivity {
         String difficulty = i.getStringExtra("difficulty");
         boolean inverseMode = i.getBooleanExtra("inverseMode", false);
         boolean dynamicDifficulty = i.getBooleanExtra("dynamicDifficulty", false);
+        String eventProfile = i.getStringExtra("eventProfile");
+        int maxErrors = i.getIntExtra("maxErrors", 3);
         int points = i.getIntExtra("points", 0);
         int correct = i.getIntExtra("correct", 0);
         int incorrect = i.getIntExtra("incorrect", 0);
@@ -38,6 +40,12 @@ public class ResultActivity extends AppCompatActivity {
         if (difficulty == null) {
             difficulty = "Facil";
         }
+        if (eventProfile == null) {
+            eventProfile = "Mixto";
+        }
+        if (maxErrors < 1) {
+            maxErrors = 1;
+        }
 
         String title = completed ? "Ganaste la partida" : "Partida finalizada";
         binding.tvTitle.setText(title);
@@ -48,12 +56,15 @@ public class ResultActivity extends AppCompatActivity {
 
         String stats = "Jugador: " + player + "\n"
                 + "Dificultad: " + difficulty + "\n"
-            + "Modo inversa: " + (inverseMode ? "Si" : "No") + "\n"
-            + "Dificultad dinamica: " + (dynamicDifficulty ? "Si" : "No") + "\n"
+               + "Juego local: Si\n"
+            + "Modo eventos variados: " + (inverseMode ? "Si" : "No") + "\n"
+            + "Ajuste dinamico: " + (dynamicDifficulty ? "Si" : "No") + "\n"
+               + "Perfil de evento: " + eventProfile + "\n"
+               + "Errores maximos: " + maxErrors + "\n"
                 + "Puntos: " + points + "\n"
                 + "Correctas: " + correct + "\n"
                 + "Incorrectas: " + incorrect + "\n"
-            + "Rondas jugadas: " + (correct + incorrect) + "/" + totalIterations + "\n"
+            + "Eventos jugados: " + (correct + incorrect) + "/" + totalIterations + "\n"
             + "Tiempo maximo inicial/final: " + maxTimeStart + "s / " + maxTimeEnd + "s\n"
             + "Promedio de reaccion: " + avgMs + " ms\n"
             + "Resultado: " + reason;

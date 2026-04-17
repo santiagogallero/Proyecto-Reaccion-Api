@@ -83,14 +83,41 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Mira la secuencia"
+            android:text="Consigna"
             android:textColor="@color/text_primary"
-            android:textSize="28sp"
+            android:textSize="24sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/gridPads"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvCountdown" />
+
+        <TextView
+            android:id="@+id/tvStimulus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Estimulo"
+            android:textColor="@color/text_primary"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvMain" />
+
+        <GridLayout
+            android:id="@+id/gridColorMosaic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:alignmentMode="alignMargins"
+            android:columnCount="4"
+            android:rowCount="3"
+            android:useDefaultMargins="true"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvStimulus" />
 
         <LinearLayout
             android:id="@+id/gridPads"
@@ -101,7 +128,7 @@
             app:layout_constraintBottom_toTopOf="@id/tvHint"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvMain">
+            app:layout_constraintTop_toBottomOf="@id/gridColorMosaic">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -115,9 +142,9 @@
                     android:layout_height="140dp"
                     android:layout_margin="6dp"
                     android:layout_weight="1"
-                    android:text="ROJO"
+                    android:text="OPCION 1"
                     android:textColor="@color/text_primary"
-                    android:textSize="20sp"
+                    android:textSize="17sp"
                     android:textStyle="bold"
                     app:backgroundTint="@color/error_red"
                     app:cornerRadius="24dp" />
@@ -128,9 +155,9 @@
                     android:layout_height="140dp"
                     android:layout_margin="6dp"
                     android:layout_weight="1"
-                    android:text="VERDE"
+                    android:text="OPCION 2"
                     android:textColor="@color/text_primary"
-                    android:textSize="20sp"
+                    android:textSize="17sp"
                     android:textStyle="bold"
                     app:backgroundTint="@color/success_green"
                     app:cornerRadius="24dp" />
@@ -148,9 +175,9 @@
                     android:layout_height="140dp"
                     android:layout_margin="6dp"
                     android:layout_weight="1"
-                    android:text="AZUL"
+                    android:text="OPCION 3"
                     android:textColor="@color/text_primary"
-                    android:textSize="20sp"
+                    android:textSize="17sp"
                     android:textStyle="bold"
                     app:backgroundTint="@color/accent_blue"
                     app:cornerRadius="24dp" />
@@ -161,9 +188,9 @@
                     android:layout_height="140dp"
                     android:layout_margin="6dp"
                     android:layout_weight="1"
-                    android:text="AMARILLO"
+                    android:text="OPCION 4"
                     android:textColor="#111111"
-                    android:textSize="20sp"
+                    android:textSize="17sp"
                     android:textStyle="bold"
                     app:backgroundTint="#FFD54F"
                     app:cornerRadius="24dp" />
@@ -175,7 +202,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Espera la secuencia y repetila tocando los colores"
+            android:text="Lee el evento y responde rapido"
             android:textColor="@color/text_secondary"
             android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@id/btnExit"

@@ -4,7 +4,6 @@ public class GameUiState {
 
     public enum Phase {
         COUNTDOWN,
-        SHOW_SEQUENCE,
         USER_TURN,
         FEEDBACK,
         GAME_OVER
@@ -28,10 +27,12 @@ public class GameUiState {
     public final int maxTimeStart;
     public final int maxTimeCurrent;
     public final int preStartCountdown;
-    public final int highlightedPadIndex;
-    public final int sequenceLength;
     public final String mainText;
     public final String ruleText;
+    public final String stimulusText;
+    public final int stimulusTextColor;
+    public final int[] stimulusColorTiles;
+    public final String[] options;
     public final String feedbackMessage;
     public final Feedback feedback;
     public final boolean inverseMode;
@@ -53,10 +54,12 @@ public class GameUiState {
             int maxTimeStart,
             int maxTimeCurrent,
             int preStartCountdown,
-            int highlightedPadIndex,
-            int sequenceLength,
             String mainText,
             String ruleText,
+            String stimulusText,
+            int stimulusTextColor,
+            int[] stimulusColorTiles,
+            String[] options,
             String feedbackMessage,
             Feedback feedback,
             boolean inverseMode,
@@ -77,10 +80,12 @@ public class GameUiState {
         this.maxTimeStart = maxTimeStart;
         this.maxTimeCurrent = maxTimeCurrent;
         this.preStartCountdown = preStartCountdown;
-        this.highlightedPadIndex = highlightedPadIndex;
-        this.sequenceLength = sequenceLength;
         this.mainText = mainText;
         this.ruleText = ruleText;
+        this.stimulusText = stimulusText;
+        this.stimulusTextColor = stimulusTextColor;
+        this.stimulusColorTiles = stimulusColorTiles;
+        this.options = options;
         this.feedbackMessage = feedbackMessage;
         this.feedback = feedback;
         this.inverseMode = inverseMode;

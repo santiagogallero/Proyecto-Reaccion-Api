@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -37,6 +38,9 @@ public final class ActivityGameBinding implements ViewBinding {
   public final MaterialButton btnPad3;
 
   @NonNull
+  public final GridLayout gridColorMosaic;
+
+  @NonNull
   public final LinearLayout gridPads;
 
   @NonNull
@@ -61,6 +65,9 @@ public final class ActivityGameBinding implements ViewBinding {
   public final TextView tvScore;
 
   @NonNull
+  public final TextView tvStimulus;
+
+  @NonNull
   public final TextView tvTimer;
 
   @NonNull
@@ -69,9 +76,10 @@ public final class ActivityGameBinding implements ViewBinding {
   private ActivityGameBinding(@NonNull FrameLayout rootView, @NonNull MaterialButton btnExit,
       @NonNull MaterialButton btnPad0, @NonNull MaterialButton btnPad1,
       @NonNull MaterialButton btnPad2, @NonNull MaterialButton btnPad3,
-      @NonNull LinearLayout gridPads, @NonNull FrameLayout rootGame, @NonNull TextView tvCountdown,
-      @NonNull TextView tvGameInfo, @NonNull TextView tvHint, @NonNull TextView tvMain,
-      @NonNull TextView tvRule, @NonNull TextView tvScore, @NonNull TextView tvTimer,
+      @NonNull GridLayout gridColorMosaic, @NonNull LinearLayout gridPads,
+      @NonNull FrameLayout rootGame, @NonNull TextView tvCountdown, @NonNull TextView tvGameInfo,
+      @NonNull TextView tvHint, @NonNull TextView tvMain, @NonNull TextView tvRule,
+      @NonNull TextView tvScore, @NonNull TextView tvStimulus, @NonNull TextView tvTimer,
       @NonNull View viewFeedback) {
     this.rootView = rootView;
     this.btnExit = btnExit;
@@ -79,6 +87,7 @@ public final class ActivityGameBinding implements ViewBinding {
     this.btnPad1 = btnPad1;
     this.btnPad2 = btnPad2;
     this.btnPad3 = btnPad3;
+    this.gridColorMosaic = gridColorMosaic;
     this.gridPads = gridPads;
     this.rootGame = rootGame;
     this.tvCountdown = tvCountdown;
@@ -87,6 +96,7 @@ public final class ActivityGameBinding implements ViewBinding {
     this.tvMain = tvMain;
     this.tvRule = tvRule;
     this.tvScore = tvScore;
+    this.tvStimulus = tvStimulus;
     this.tvTimer = tvTimer;
     this.viewFeedback = viewFeedback;
   }
@@ -148,6 +158,12 @@ public final class ActivityGameBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.gridColorMosaic;
+      GridLayout gridColorMosaic = ViewBindings.findChildViewById(rootView, id);
+      if (gridColorMosaic == null) {
+        break missingId;
+      }
+
       id = R.id.gridPads;
       LinearLayout gridPads = ViewBindings.findChildViewById(rootView, id);
       if (gridPads == null) {
@@ -192,6 +208,12 @@ public final class ActivityGameBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tvStimulus;
+      TextView tvStimulus = ViewBindings.findChildViewById(rootView, id);
+      if (tvStimulus == null) {
+        break missingId;
+      }
+
       id = R.id.tvTimer;
       TextView tvTimer = ViewBindings.findChildViewById(rootView, id);
       if (tvTimer == null) {
@@ -205,8 +227,8 @@ public final class ActivityGameBinding implements ViewBinding {
       }
 
       return new ActivityGameBinding((FrameLayout) rootView, btnExit, btnPad0, btnPad1, btnPad2,
-          btnPad3, gridPads, rootGame, tvCountdown, tvGameInfo, tvHint, tvMain, tvRule, tvScore,
-          tvTimer, viewFeedback);
+          btnPad3, gridColorMosaic, gridPads, rootGame, tvCountdown, tvGameInfo, tvHint, tvMain,
+          tvRule, tvScore, tvStimulus, tvTimer, viewFeedback);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

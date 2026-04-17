@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setupDifficultySpinner();
+        setupEventProfileSpinner();
         setupDefaults();
         showBestScore();
 
@@ -44,11 +45,24 @@ public class MainActivity extends AppCompatActivity {
         binding.spinnerDifficulty.setAdapter(adapter);
     }
 
+    private void setupEventProfileSpinner() {
+        String[] profiles = {"Mixto", "Numeros", "Colores", "Stroop"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_spinner_item,
+                profiles
+        );
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        binding.spinnerEventProfile.setAdapter(adapter);
+    }
+
     private void setupDefaults() {
         binding.etPlayerName.setText("Jugador");
         binding.etIterations.setText("20");
         binding.etCustomTime.setText("");
-        binding.swInverseMode.setChecked(false);
+        binding.etMaxErrors.setText("3");
+        binding.spinnerEventProfile.setSelection(0);
+        binding.swInverseMode.setChecked(true);
         binding.swDynamicDifficulty.setChecked(false);
         binding.swSound.setChecked(true);
     }
@@ -79,7 +93,21 @@ public class MainActivity extends AppCompatActivity {
             iterations = 20;
         }
 
+        int maxErrors;
+        try {
+            maxErrors = Integer.parseInt(binding.etMaxErrors.getText().toString().trim());
+        } catch (NumberFormatException e) {
+            maxErrors = 3;
+        }
+        if (maxErrors < 1) {
+            maxErrors = 1;
+        }
+        if (maxErrors > 10) {
+            maxErrors = 10;
+        }
+
         String difficulty = binding.spinnerDifficulty.getSelectedItem().toString();
+        String eventProfile = binding.spinnerEventProfile.getSelectedItem().toString();
         int defaultTime = DifficultyConfig.defaultMaxTimeFor(difficulty);
 
         int maxTime = defaultTime;
@@ -108,6 +136,8 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(GameActivity.EXTRA_INVERSE_MODE, binding.swInverseMode.isChecked());
         intent.putExtra(GameActivity.EXTRA_DYNAMIC_DIFFICULTY, binding.swDynamicDifficulty.isChecked());
         intent.putExtra(GameActivity.EXTRA_SOUND_ENABLED, binding.swSound.isChecked());
+        intent.putExtra(GameActivity.EXTRA_EVENT_PROFILE, eventProfile);
+        intent.putExtra(GameActivity.EXTRA_MAX_ERRORS, maxErrors);
         startActivity(intent);
     }
 }
